@@ -12,6 +12,7 @@
   padding: 0;
   font-family: Rubik, sans-serif;
 }
+
 /* -------------------------------------------------------------------------- */
 /*                                   Global Styles                            */
 /* -------------------------------------------------------------------------- */
@@ -182,8 +183,8 @@ btn {
   transition: box-shadow 250ms ease, transform 250ms ease;
 }
 .download-button:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 8px 12px 2px rgba(34, 34, 34, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0px 3px 12px 2px rgba(34, 34, 34, 0.3);
 }
 /* -------------------------------------------------------------------------- */
 /*                                Hero section                                */
@@ -192,6 +193,7 @@ btn {
 .hero-section {
   padding-bottom: 48px;
   background-color: #fafbfd;
+  overflow: hidden;
 }
 
 .hero-container {
@@ -248,8 +250,8 @@ btn {
 }
 
 .hero-button:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 8px 12px 2px rgba(34, 34, 34, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0px 3px 12px 2px rgba(34, 34, 34, 0.3);
 }
 .watch-video-group {
   display: flex;
@@ -284,11 +286,11 @@ btn {
 .hero-img {
   position: relative;
   z-index: 20;
-  transition: transform 500ms ease;
+  transition: transform 1300ms ease;
 }
 
 .hero-img:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .hero-right-group::before {
@@ -296,11 +298,24 @@ btn {
   z-index: 1;
   display: inline-block;
   content: '';
-  background-image: url(../images/hero/hero-decorate-element.svg);
-  width: 295px;
-  height: 700px;
-  top: -114px;
-  right: 0;
+
+  width: 400px;
+  height: 400px;
+  top: 50px;
+  right: 150px;
+
+  background-image: url(../images/features/big-rectangle-decor.svg);
+  background-size: cover;
+
+  transform: scale(0.1);
+  filter: blur(150px) hue-rotate(-110deg);
+
+  transition: transform 800ms ease, filter 800ms ease;
+}
+
+.hero-right-group:hover::before {
+  filter: blur(300px) hue-rotate(-100deg) saturate(0.3) brightness(2);
+  transform: translate3d(0, 20px, 0) scale(3);
 }
 
 /* -------------------------------------------------------------------------- */
@@ -407,8 +422,8 @@ btn {
 }
 
 .features-button:hover {
-  transform: scale(1.03);
-  box-shadow: 0px 8px 12px 2px rgba(34, 34, 34, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0px 3px 12px 2px rgba(34, 34, 34, 0.3);
 }
 /* -------------------------------------------------------------------------- */
 /*                                   Experts                                  */
@@ -546,8 +561,8 @@ btn {
 
 .experts-button:hover {
   background-color: #4285f4;
-  transform: scale(1.03);
-  box-shadow: 0px 8px 12px 2px rgba(34, 34, 34, 0.3);
+  transform: scale(1.02);
+  box-shadow: 0px 3px 12px 2px rgba(34, 34, 34, 0.3);
 }
 
 .experts-img {
@@ -557,8 +572,8 @@ btn {
 }
 
 .experts-img:hover {
-  box-shadow: 0px 4px 18px rgb(66, 133, 244, 0.3);
-  transform: scale(1.1);
+  box-shadow: 0px 4px 18px rgba(170, 187, 214, 0.3);
+  transform: scale(1.01);
   border-radius: 10px;
 }
 
@@ -567,7 +582,8 @@ btn {
 /* -------------------------------------------------------------------------- */
 .benefits-section {
   padding-top: 80px;
-  padding-bottom: 57px;
+  padding-bottom: 75px;
+  position: relative;
 }
 .healthcare-title {
   text-align: center;
@@ -582,12 +598,44 @@ btn {
   text-align: center;
 }
 
+.benefits-small-rect {
+  position: absolute;
+  bottom: 30px;
+
+  z-index: 1;
+}
+.benefits-medium-rect {
+  position: absolute;
+  z-index: 2;
+
+  left: 684px;
+  top: 261px;
+}
+.benefits-big-rect {
+  position: absolute;
+  z-index: 3;
+
+  top: 392px;
+  left: 1031px;
+
+  transform: rotate(332deg) scale(0.8);
+}
+
+.benefits-small-rect-2 {
+  position: absolute;
+
+  top: 188px;
+  right: 439px;
+
+  z-index: 1;
+}
 .benefits-list {
+  position: relative;
+  z-index: 50;
+
   display: flex;
   justify-content: center;
   gap: 72px;
-
-  margin-bottom: 75px;
 }
 
 .benefits-item {
@@ -603,7 +651,7 @@ btn {
 }
 .benefits-item:hover {
   transform: scale(1.03);
-  box-shadow: 0px 4px 18px rgba(88, 126, 236, 0.18);
+  box-shadow: 0px 4px 18px rgba(87, 87, 87, 0.18);
 }
 
 .benefits-img {
@@ -636,6 +684,9 @@ btn {
   color: var(--secondary-text-color);
 }
 
+.footer {
+  padding-bottom: 57px;
+}
 .markets {
   display: flex;
   justify-content: center;
@@ -645,5 +696,5 @@ btn {
   transition: transform 250ms ease;
 }
 .playmarket:hover {
-  transform: scale(1.2);
+  transform: scale(1.04);
 }
